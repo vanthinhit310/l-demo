@@ -62,6 +62,7 @@ class TestWriteCsv extends Command
             Log::debug("Records", $e->getRecords());
         }
 
-        $this->info('Total execution time in seconds: ' . (microtime(true) - $time_start));
+        $count = User::count();
+        $this->info("Total execution time export $count in seconds: " . (microtime(true) - $time_start));
     }
 }
